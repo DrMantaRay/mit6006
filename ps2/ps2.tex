@@ -1,0 +1,37 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{H.W. 1}
+\author{Patrick Chen}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{1}
+a) 
+The height of the recursion tree is n at LoD n, because SnowFlake-Edge decrements n once for each recursive call it makes. \\
+b) The number of nodes corresponds to the number of edges at a given level. At each level of recursion, each edge splits into 4 edges. Since we start with 3 edges, there are $3 \cdot 4^i$ nodes.\\
+c) There's only 1 triangle at each node, so the asymptotic rendering time is $\Theta(1)$.\\
+d)At each level of the recursion tree, the number of triangles is equal to the number of edges from the last step, so it's 
+$\Theta(num triangles)=\Theta(num edges)=\Theta(4^i)$\\
+e) Since rendering triangles of arbitrary size all takes the same amount of time, the total asymptotic cost is jut the total number of triangles, which is $\Theta(4^n)$.
+f) The height of the recursion tree is still $n$.\\
+g) The number of nodes is still $3 \cdot 4^i$.\\
+h) The line segments aren't rendered til the end, so the asymptotic rendering time is $0$.
+i) $\Theta(1)$, since there is 1 line rendered for each node. \\
+j) Nodes aren't rendered til the last level, so $0$.
+k) The number of line segments that need to be rendered is a constant times the nnumber of nodes. The number of nodes is $3 \times 4^n$, so the asymptotic rendering time is $\Theta(4^n)$. \\
+l) It's the cost of rendering the last level, which is $\Theta(4^n)$.\\
+m) The height of the recursion tree is still $n$.\\
+n) The number of nodes at a level is still $r \times 4^i$. \\
+o) It's $0$ because nodes are only rendered at the last level.
+p) Rasterizing a line segment takes resources proportional to the length of the line. At each level, the line segment lengths get divided by 3. Thus, it is $\theta((1/3)^n)$.\\
+q)  It's $0$ since the lines aren't rasterized til the last level.\\
+r)We have to multiply the number of nodes by the length of the segments, which results is $3 \times 4^n \times (1/3)^n= \Theta((4/3)^n)$ \\
+s) The total cost is $\Theta((4/3)^n)$, summing over the previous two steps.
+t)It's $\Theta(1)$, since the snowflake has finite surface area.
+u)The side length of triangle corresponding a node at a given level $n$ for a triangle is $\Theta((1/3)^n)$. Then the area is $\theta((1/3)^{2n})$. At each level, we have $\Theta(3 \cdot 4^n)$ nodes. then the cost of rendering a given level is $\Theta((4/9)^n)$. Summing this over $n$ levels gives $\Theta(1)$.
+
+\end{document}
