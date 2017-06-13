@@ -33,5 +33,9 @@ r)We have to multiply the number of nodes by the length of the segments, which r
 s) The total cost is $\Theta((4/3)^n)$, summing over the previous two steps.
 t)It's $\Theta(1)$, since the snowflake has finite surface area.
 u)The side length of triangle corresponding a node at a given level $n$ for a triangle is $\Theta((1/3)^n)$. Then the area is $\theta((1/3)^{2n})$. At each level, we have $\Theta(3 \cdot 4^n)$ nodes. then the cost of rendering a given level is $\Theta((4/9)^n)$. Summing this over $n$ levels gives $\Theta(1)$.
-
+\section{2}
+a) find_min has the highest CPU usage\\
+b) It has 259964 calls.
+c) It's $O(n)$, since it's possible that we have to iterate through the entire array to find the minimum.
+d) It would be $O(log(n))$.
 \end{document}
