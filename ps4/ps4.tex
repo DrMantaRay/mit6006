@@ -1,0 +1,21 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+\title{H.W. 4}
+\author{Patrick Chen}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{1}
+a) 4. Swapping bits in any permutation gives the same hash, so the hash of two inputs is not independent based on the input.\\
+b) 4. Both are necessary- if we didn't resize then the linked lists could get arbitrarily large. If we didn't do collision resolution, we would be forced to resize too often.\\
+c) 6. We need to look through the first hash table which takes $\Theta(m)$, then rehash $n$ elements, which takes $\Theta(n)$.\\
+d) It wouldn't work- supposed we picked $k=1$. Then we would lose all amortized linearity, as we'd have to resize our table way too frequently. This sense of "frequency" is true for any smaller constant. We could probably find some $k$ that worked for some $n$, but this would mean we would have to know how many elements we are hashing.
+\section{2}
+a) Many keys are entered all at once (the members), and then many lookups of the members occur. The members can change, but this occurs rarely.\\
+b) Since accessing the array happens very frequently, and looping will probably happen frequently, we want as little empty space in the array as possible. since the array doesn't change in size much, we'd want to start with a small minimum size and a growth rate of 2- we don't want to leave too much initial empty space and we don't want to leave that much empty space in our array when we grow it.
+\end{document}
