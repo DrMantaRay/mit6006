@@ -1,0 +1,88 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\title{H.W. 5}
+\author{Patrick Chen}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section*{1}
+a) $\Theta(N)$. All operations are order $N$\\
+b) $\Theta(N)$. The output is length $N+1$. \\
+c) Yes. \\
+d) $\Theta(N^2)$\\
+e) $\Theta(N)$\\
+f) No. \\
+g) $\Theta(N)$ \\
+h) $\Theta(N)$ \\ 
+i) $\Theta(N^2)$ \\
+j) $\Theta(log N)$ \\
+k) $\Theta(N^2)$ \\
+l) $\Theta(N^2)$ \\
+m) $\Theta(N^{log_2 3})$ \\
+n) $\Theta(N^{log_2 3})$ \\
+o) $\Theta(N^{log_2 3})$ \\
+p) \\
+\begin{lstlisting}
+KTHROOT(A, K, N)
+	tolerance = 0.1^N
+	guess = N/2
+	if n<0: 
+		lower = n
+		upper = 0 
+	else:
+		lower = 0
+		upper = n
+	while guess^K - A > tolerance :
+		if guess^K- A > 0:
+			lower = guess
+			guess = (lower+upper)/2
+		else: 
+			upper = guess
+			guess = (lower+upper)/2
+	return guess
+\end{lstlisting}
+\section*{2}
+a) $\Theta(N^{log_2 3})$ \\
+b) $\Theta(RC/N)$ \\
+c) $\Theta(RC/N $
+d) 0 is a fixed point. 1 is a fixed point. 2 is not. 3 is not. m-2 is not. m-1 is.
+e) 1. False \\
+2. False \\
+3. False \\
+4. True \\
+5. False \\
+f) 
+1. False \\
+2. False \\
+3. True \\
+4. False \\
+5. True \\
+		
+\end{document}
