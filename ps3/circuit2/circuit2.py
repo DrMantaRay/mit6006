@@ -169,7 +169,7 @@ class RangeIndex(object):
     return self.data[low_index:high_index]
 
   def count(self, low_key, high_key):
-    """Number of keys that fall within [low_key, high_key]."""
+    """Number of ke ys that fall within [low_key, high_key]."""
     low_index = self._binary_search(low_key)
     high_index = self._binary_search(high_key)
     if high_index < len(self.data) and self.data[high_index] == high_key:
