@@ -37,8 +37,8 @@
       <file leaf-file-name="big_num.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rsa/big_num.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="324" column="49" lean-forward="false" selection-start-line="324" selection-start-column="49" selection-end-line="324" selection-end-column="49" />
+            <state relative-caret-position="371">
+              <caret line="322" column="29" lean-forward="false" selection-start-line="322" selection-start-column="29" selection-end-line="322" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -118,7 +118,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="settings.github" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ps6" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -226,8 +226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rsa/big_num.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="324" column="49" lean-forward="false" selection-start-line="324" selection-start-column="49" selection-end-line="324" selection-end-column="49" />
+        <state relative-caret-position="371">
+          <caret line="322" column="29" lean-forward="false" selection-start-line="322" selection-start-column="29" selection-end-line="322" selection-end-column="29" />
           <folding />
         </state>
       </provider>

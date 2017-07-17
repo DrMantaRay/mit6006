@@ -1,0 +1,56 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\begin{document}
+\maketitle
+\tableofcontents
+\section*{1}
+We can run Djikstra's algorithm, except instead of just keeping the total weight required to travel to a node, we keep track of $(level, weight)$. We keep track of both the lowest level required to reach a node and the maximum friendship strength- this can allow up to two stored tuples per node. This way, we make sure that we both keep track of the shortest path as well as ensuring that we reach all nodes $k$ levels away. \\
+The running time off this algorithm is $O(kE+V)$ because with $k$ levels we can only go through the sets of all edges at most once. We only visit each vertex once.
+\section*{2}
+a\\
+We do a depth first search. First pick some random library $L_0$. Then initiate a stack $S$ and a dictionary $D$ with the library names as the keys and 1 representing an installed library and 0 representing an uninstalled library. We add $L_0$ to the stack. Then we recursively go through the edges of $L_0$ and add each vertex to the stack until we reach a library with no dependencies. We add that library to the stack, install that library and change the entry in $D$ to 1. 
+Then for all future vertices, we first add the vertex to the stack. Then we check whether the dependencies have been installed. If so, we install the library and change the value in $D$. 
+Printing the vertices off the top of the stack in order gives an installation order. We visit each vertex and edge at most once, and all other operations are constant, so this takes $O(V+E)$ time.
+b) 
+\begin{lstlisting}
+def installLibraries(uninstalledList, dependencyDict, installedDict) {
+	for library in uninstalledList:
+		if installedDict[library] == 'installed':
+			pass
+		else:
+			installLibrary(library, dependencyDict, installedDict)
+def installLibrary(libraryName,dependencyDict, installedDict) (
+	if libraryName in installedDict:
+		return
+	else:
+		for dependency in dependencyDict[libraryName]:
+			installLibrary(dependency, dependencyDict, installedDict)
+\end{lstlisting}
+My algorithm recursively calls installLibrary on dependencies, doing nothing if the dependency has already been installed and calling installLibrary on the dependency if it has not been installed. For any given library, the number of calls to installLibrary is at most D. We also loop through the uninstalledList, which is of length P. All other operations are constant, so our program takes $O(P(1+D))=O(P+PD)$ time.
+\end{document}
